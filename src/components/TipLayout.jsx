@@ -1,7 +1,7 @@
 import Label from "./layout/Label";
 import Button from "./layout/Button";
 
-const TipLayout = () => {
+const TipLayout = ({ handlePercentage }) => {
   const percentages = [
     { value: 0.05, perc: "5%" },
     { value: 0.1, perc: "10%" },
@@ -11,7 +11,11 @@ const TipLayout = () => {
   ];
 
   const createButtons = percentages.map((btn) => {
-    return <Button>{btn.perc}</Button>;
+    return (
+      <Button value={btn.value} handlePercentage={handlePercentage}>
+        {btn.perc}
+      </Button>
+    );
   });
 
   return (
@@ -23,6 +27,7 @@ const TipLayout = () => {
           type="number"
           className="bg-project-neutral-200 text-right px-4 py-2 outline-none"
           placeholder="Custom"
+          onChange={(e) => handlePercentage(e.target.value / 100)}
         />
       </div>
     </div>

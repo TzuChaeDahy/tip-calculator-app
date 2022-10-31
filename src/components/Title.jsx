@@ -1,12 +1,9 @@
+import Logo from "../images/logo.svg";
+
 const Title = () => {
   return (
     <header>
-      <h1 className="text-center tracking-widest uppercase font-bold text-project-cyan-300">
-        Spli
-      </h1>
-      <h1 className="text-center tracking-widest uppercase font-bold text-project-cyan-300">
-        tter
-      </h1>
+      <img src={Logo} alt="Logo" className="my-0 mx-auto" />
     </header>
   );
 };
