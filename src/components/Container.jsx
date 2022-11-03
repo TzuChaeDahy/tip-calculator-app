@@ -10,14 +10,19 @@ const Container = () => {
   const [percentage, setPercentage] = useState(0);
   const [tipAmount, setTipAmount] = useState(0);
   const [totalAmount, setTotalAmount] = useState(0);
+
   const billInput = useRef(null);
   const peopleInput = useRef(null);
+  const percentageInput = useRef(null);
+  const [redRing, setRedRing] = useState();
 
   const handleReset = () => {
     setBill(0);
     setPeople(0);
+    setPercentage(0);
     billInput.current.value = 0;
     peopleInput.current.value = 0;
+    percentageInput.current.value = 0;
   };
 
   useEffect(() => {
@@ -25,13 +30,12 @@ const Container = () => {
       console.log("Não pode ser zero");
       setTipAmount(0);
       setTotalAmount(0);
-      //Sistema de Borda Vermelha
+      setRedRing(true);
       return;
     }
     setTipAmount(((bill * percentage) / people).toFixed(2));
     setTotalAmount(((bill / people) * (percentage + 1)).toFixed(2));
-    console.log(billInput.current.value);
-    console.log(peopleInput.current.value);
+    setRedRing(false);
   }, [bill, people, percentage]);
 
   return (
@@ -40,8 +44,11 @@ const Container = () => {
         handleBill={setBill}
         handlePeople={setPeople}
         handlePercentage={setPercentage}
+        percentage={percentage}
         billInput={billInput}
         peopleInput={peopleInput}
+        percentageInput={percentageInput}
+        redRingState={redRing}
       />
       <Output
         tipAmount={tipAmount}

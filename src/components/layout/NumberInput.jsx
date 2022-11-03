@@ -1,10 +1,26 @@
 import Label from "./Label";
 
-const NumberInput = ({ id, label, icon, handleValue, refState }) => {
+const NumberInput = ({
+  id,
+  label,
+  icon,
+  handleValue,
+  refState,
+  redRingState,
+}) => {
   return (
     <div>
-      <Label id={id}>{label}</Label>
-      <div className="flex items-center pl-4 bg-project-neutral-200 rounded-sm overflow-hidden">
+      <div className="flex justify-between">
+        <Label id={id}>{label}</Label>
+        {redRingState && (
+          <span className="text-red-500 text-lg">Can't Be Zero</span>
+        )}
+      </div>
+      <div
+        className={`flex items-center pl-4 bg-project-neutral-200 rounded-sm overflow-hidden  focus-within:ring-2 focus-within:ring-project-cyan-200 ${
+          redRingState ? "ring-2 ring-red-500" : ""
+        }`}
+      >
         <img src={icon} alt="No Value" />
         <input
           id={id}

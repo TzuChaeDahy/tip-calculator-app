@@ -8,8 +8,11 @@ const Form = ({
   handlePeople,
   handleBill,
   handlePercentage,
+  percentage,
+  percentageInput,
   billInput,
   peopleInput,
+  redRingState,
 }) => {
   return (
     <div className="flex flex-col gap-8">
@@ -20,13 +23,18 @@ const Form = ({
         handleValue={handleBill}
         refState={billInput}
       />
-      <TipLayout handlePercentage={handlePercentage} />
+      <TipLayout
+        handlePercentage={handlePercentage}
+        percentage={percentage}
+        percentageInput={percentageInput}
+      />
       <NumberInput
         id="people"
         label="Number of People"
         icon={Person}
         handleValue={handlePeople}
         refState={peopleInput}
+        redRingState={redRingState}
       />
     </div>
   );
