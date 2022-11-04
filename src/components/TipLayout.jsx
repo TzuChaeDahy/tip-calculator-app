@@ -31,7 +31,7 @@ const TipLayout = ({ handlePercentage, percentage, percentageInput }) => {
         {createButtons}
         <input
           type="number"
-          className="bg-project-neutral-200 text-right px-4 py-2 outline-none focus-within:ring-2 focus-within:ring-project-cyan-200"
+          className="bg-project-neutral-200 text-right px-4 py-2 rounded-sm outline-none focus-within:ring-2 focus-within:ring-project-cyan-200"
           placeholder="Custom"
           onChange={(e) => handlePercentage(e.target.value / 100)}
           ref={percentageInput}

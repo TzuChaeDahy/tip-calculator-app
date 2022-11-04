@@ -10,7 +10,7 @@ const Button = ({ children, value, handlePercentage, percentage }) => {
 
   return (
     <button
-      className={`py-2 rounded-[5px] font-bold text-2xl ${
+      className={`py-2 rounded-[5px] font-bold text-2xl md:text-xl  ${
         percentage === value
           ? "bg-project-cyan-200 text-project-cyan-300"
           : "bg-project-cyan-300 text-project-neutral-100"

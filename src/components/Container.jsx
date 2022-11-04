@@ -20,9 +20,9 @@ const Container = () => {
     setBill(0);
     setPeople(0);
     setPercentage(0);
-    billInput.current.value = 0;
-    peopleInput.current.value = 0;
-    percentageInput.current.value = 0;
+    billInput.current.value = "";
+    peopleInput.current.value = "";
+    percentageInput.current.value = "";
   };
 
   useEffect(() => {
@@ -39,7 +39,7 @@ const Container = () => {
   }, [bill, people, percentage]);
 
   return (
-    <div className="p-5 bg-project-neutral-100 rounded-xl flex flex-col gap-10">
+    <div className="p-5 bg-project-neutral-100 rounded-xl grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl">
       <Form
         handleBill={setBill}
         handlePeople={setPeople}

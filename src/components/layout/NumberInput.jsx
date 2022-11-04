@@ -13,7 +13,9 @@ const NumberInput = ({
       <div className="flex justify-between">
         <Label id={id}>{label}</Label>
         {redRingState && (
-          <span className="text-red-500 text-lg">Can't Be Zero</span>
+          <span className="text-red-500 text-xs md:text-sm flex items-center">
+            Can't Be Zero
+          </span>
         )}
       </div>
       <div
@@ -30,6 +32,7 @@ const NumberInput = ({
           onChange={(e) => {
             handleValue(e.target.value);
           }}
+          placeholder="0"
           ref={refState}
         />
       </div>

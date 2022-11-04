@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply w-full min-h-screen text-[22px] flex flex-col justify-center items-center font-space bg-project-cyan-100 font-bold;
+  @apply w-full min-h-screen text-[22px] md:text-xl flex flex-col justify-center items-center font-space bg-project-cyan-100 font-bold;
 }
 
 input::-webkit-outer-spin-button,

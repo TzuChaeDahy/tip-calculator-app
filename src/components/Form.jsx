@@ -15,7 +15,7 @@ const Form = ({
   redRingState,
 }) => {
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-8 px-4 py-2">
       <NumberInput
         id="bill"
         label="Bill"
