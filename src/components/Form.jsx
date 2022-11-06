@@ -14,8 +14,10 @@ const Form = ({
   peopleInput,
   redRingState,
 }) => {
+  const containerStyles = "flex flex-col gap-8 px-4 py-2";
+
   return (
-    <div className="flex flex-col gap-8 px-4 py-2">
+    <div className={containerStyles}>
       <NumberInput
         id="bill"
         label="Bill"
