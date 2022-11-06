@@ -11,8 +11,10 @@ const NumberInput = ({
   const labelContainerStyles = "flex justify-between";
   const redAlertSpanStyles =
     "text-red-500 text-xs md:text-sm flex items-center";
-  const inputContainerStyles = `flex items-center pl-4 bg-project-neutral-200 rounded-sm focus-within:ring-2 focus-within:ring-project-cyan-200 ${
-    redRingState ? "ring-2 ring-red-500" : ""
+  const inputContainerStyles = `flex items-center pl-4 bg-project-neutral-200 rounded-sm focus-within:ring-2  ${
+    redRingState
+      ? "ring-2 ring-red-500 focus-within:ring-project-red-500"
+      : "focus-within:ring-project-cyan-200"
   }`;
   const inputStyles =
     "bg-transparent outline-none text-right pr-4 py-2 h-full text-project-cyan-300 w-full";
